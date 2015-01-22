@@ -2,29 +2,30 @@ angular.module('spinYourPhone.controllers', [])
 
 .controller('DashCtrl', function($scope,$cordovaDeviceOrientation) {
 
+$scope.error='not ready';
 document.addEventListener("deviceready", function () {
+        $scope.error='device ready';
 
     var options = {
-      frequency: 3000,
-      filter: true     // if frequency is set, filter is ignored
+      frequency: 1
     }
 
     var watch = $cordovaDeviceOrientation.watchHeading(options).then(
       null,
       function(error) {
         // An error occurred
+        $scope.error=error;
       },
       function(result) {   // updates constantly (depending on frequency value)
         var magneticHeading = result.magneticHeading;
         var trueHeading = result.trueHeading;
         var accuracy = result.headingAccuracy;
         var timeStamp = result.timestamp;
-
-        $scope.magneticHeading=magneticHeading;
-        $scope.trueHeading =trueHeading ;
-
+        $scope.radVal=(magneticHeading/360*100)|0;
       });
  
+        $scope.$apply();
+
   }, false);
 
 

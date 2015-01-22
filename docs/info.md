@@ -10,3 +10,5 @@ ladder based, resets once a week
 	this month
 	this year
 	
+
+http://jsfiddle.net/andsens/mLA7X/
