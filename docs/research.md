@@ -21,3 +21,6 @@ http://slides.com/digitaldrummerj/ionic-framework/#/
 http://digitaldrummerj.github.io/Ionic-Setup-Windows/
 
 http://forum.ionicframework.com/t/implementing-admob-is-app/3012/9
+
+
+http://docs.phonegap.com/en/3.4.0/config_ref_images.md.html#Icons%20and%20Splash%20Screens
