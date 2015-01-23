@@ -1,0 +1,9 @@
+.flip {
+  transform: scaleX(-1);
+}
+
+
+
+.flip-watch{
+  /*transition: all 1s;*/
+}

@@ -1,0 +1,6 @@
+# view AndroidManifest.xml #generated:6
+-keep class com.ionicframework.spinyourphone590633.CordovaApp { <init>(...); }
+
+# view AndroidManifest.xml #generated:12
+-keep class de.appplant.cordova.plugin.background.ForegroundService { <init>(...); }
+

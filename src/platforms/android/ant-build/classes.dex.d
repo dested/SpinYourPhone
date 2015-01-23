@@ -1,0 +1,27 @@
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes.dex : \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\com\ionic\keyboard\IonicKeyboard$1.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\com\ionic\keyboard\IonicKeyboard$2.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\com\ionic\keyboard\IonicKeyboard$3.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\com\ionic\keyboard\IonicKeyboard.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\com\ionicframework\spinyourphone590633\BuildConfig.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\com\ionicframework\spinyourphone590633\CordovaApp.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\com\ionicframework\spinyourphone590633\R$attr.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\com\ionicframework\spinyourphone590633\R$drawable.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\com\ionicframework\spinyourphone590633\R$string.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\com\ionicframework\spinyourphone590633\R$xml.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\com\ionicframework\spinyourphone590633\R.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\de\appplant\cordova\plugin\background\BackgroundMode$1.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\de\appplant\cordova\plugin\background\BackgroundMode$2.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\de\appplant\cordova\plugin\background\BackgroundMode$3.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\de\appplant\cordova\plugin\background\BackgroundMode$Event.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\de\appplant\cordova\plugin\background\BackgroundMode.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\de\appplant\cordova\plugin\background\ForegroundService$1$1.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\de\appplant\cordova\plugin\background\ForegroundService$1.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\de\appplant\cordova\plugin\background\ForegroundService.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\nl\xservices\plugins\Insomnia$1.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\nl\xservices\plugins\Insomnia$2.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\nl\xservices\plugins\Insomnia.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\org\apache\cordova\device\Device.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\org\apache\cordova\deviceorientation\CompassListener$1.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\classes\org\apache\cordova\deviceorientation\CompassListener.class \
+C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\ant-build\dexedLibs\classes-7f4ce1f30b2c49bd38636119099f8e31.jar \

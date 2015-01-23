@@ -5,5 +5,8 @@ cordova plugin add org.apache.cordova.console
 cordova plugin add com.ionic.keyboard
 cordova plugin add https://github.com/Adlotto/cordova-plugin-recheck-screen-orientation.git
 cordova plugin add net.yoik.cordova.plugins.screenorientation
+cordova plugin add de.appplant.cordova.plugin.background-mode@0.6.3
+
+
 
 cordova prepare

@@ -51,6 +51,4 @@ passwords.js
 .ntvs_analysis.dat.tmp
 .ntvs_analysis.dat
 
-src/platforms/
-src/plugins/
 release.keystore
