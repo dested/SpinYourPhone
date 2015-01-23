@@ -9,6 +9,15 @@ ladder based, resets once a week
 	this week
 	this month
 	this year
-	
+
+whole badge system
+	first spin
+	top 1000 spins today
+
+
+
+keep screen alive
+
+background service
 
 http://jsfiddle.net/andsens/mLA7X/

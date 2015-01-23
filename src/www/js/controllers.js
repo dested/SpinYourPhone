@@ -1,30 +1,43 @@
 angular.module('spinYourPhone.controllers', [])
 
 .controller('DashCtrl', function($scope,$cordovaDeviceOrientation) {
+  var  radVal=0;
+  $scope.model={};
 
-$scope.error='not ready';
-document.addEventListener("deviceready", function () {
-        $scope.error='device ready';
+  $scope.model.insomniaEnabled=false;
+  setInterval(function(){
+    if($scope.radVal!=radVal){
+      $scope.radVal=radVal;
+      $scope.$apply();
+    }
+  },50);
 
+$scope.callback={};
+
+$scope.callback.toggleInsomnia=function(){
+  $scope.model.insomniaEnabled=!$scope.model.insomniaEnabled;
+
+  if($scope.model.insomniaEnabled){
+    window.plugins.insomnia.keepAwake()
+  }else{
+    window.plugins.insomnia.allowSleepAgain()
+  }
+};
+
+
+  document.addEventListener("deviceready", function () {
     var options = {
       frequency: 1
     }
 
-    var watch = $cordovaDeviceOrientation.watchHeading(options).then(
-      null,
-      function(error) {
-        // An error occurred
-        $scope.error=error;
-      },
-      function(result) {   // updates constantly (depending on frequency value)
-        var magneticHeading = result.magneticHeading;
-        var trueHeading = result.trueHeading;
-        var accuracy = result.headingAccuracy;
-        var timeStamp = result.timestamp;
-        $scope.radVal=(magneticHeading/360*100)|0;
-      });
- 
-        $scope.$apply();
+    navigator.compass.watchHeading(function (result) {
+
+     var magneticHeading = result.magneticHeading;
+     radVal=(magneticHeading/360*100)|0;
+
+   }, function (err) {
+   }, options);
+
 
   }, false);
 
