@@ -14,7 +14,7 @@ whole badge system
 	first spin
 	top 1000 spins today
 
-
+rank by state
 
 keep screen alive
 
