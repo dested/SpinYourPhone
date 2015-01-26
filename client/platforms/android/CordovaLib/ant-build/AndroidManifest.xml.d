@@ -1,2 +1,2 @@
-C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\CordovaLib\ant-build\AndroidManifest.xml : \
-C:\Users\saiello\Documents\SpinYourPhone\src\platforms\android\CordovaLib\AndroidManifest.xml \
+C:\code\SpinYourPhone\client\platforms\android\CordovaLib\ant-build\AndroidManifest.xml : \
+C:\code\SpinYourPhone\client\platforms\android\CordovaLib\AndroidManifest.xml \

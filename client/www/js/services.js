@@ -1,97 +1,77 @@
 angular.module('spinYourPhone.services', [])
-
-.factory('Chats', function() {
-  // Might use a resource here that returns a JSON array
-
-  // Some fake testing data
-  var chats = [{
-    id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'
-  }, {
-    id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
-  }, {
-    id: 2,
-    name: 'Andrew Jostlin',
-    lastText: 'Did you get the ice cream?',
-    face: 'https://pbs.twimg.com/profile_images/491274378181488640/Tti0fFVJ.jpeg'
-  }, {
-    id: 3,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
-  }, {
-    id: 4,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'https://pbs.twimg.com/profile_images/491995398135767040/ie2Z_V6e.jpeg'
-  }];
-
-  return {
-    all: function() {
-      return chats;
-    },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
-    },
-    get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
+    .factory('$localStorage', ['$window', function ($window) {
+        return {
+            set: function (key, value) {
+                $window.localStorage[key] = value;
+            },
+            get: function (key, defaultValue) {
+                return $window.localStorage[key] || defaultValue;
+            },
+            setObject: function (key, value) {
+                $window.localStorage[key] = JSON.stringify(value);
+            },
+            getObject: function (key) {
+                return JSON.parse($window.localStorage[key] || '{}');
+            }
         }
-      }
-      return null;
-    }
-  }
-})
+    }])
 
-/**
- * A simple example service that returns some data.
- */
-.factory('Friends', function() {
-  // Might use a resource here that returns a JSON array
+    .service('authService', function ($q, $http, $localStorage) {
 
-  // Some fake testing data
-  // Some fake testing data
-  var friends = [{
-    id: 0,
-    name: 'Ben Sparrow',
-    notes: 'Enjoys drawing things',
-    face: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'
-  }, {
-    id: 1,
-    name: 'Max Lynx',
-    notes: 'Odd obsession with everything',
-    face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
-  }, {
-    id: 2,
-    name: 'Andrew Jostlen',
-    notes: 'Wears a sweet leather Jacket. I\'m a bit jealous',
-    face: 'https://pbs.twimg.com/profile_images/491274378181488640/Tti0fFVJ.jpeg'
-  }, {
-    id: 3,
-    name: 'Adam Bradleyson',
-    notes: 'I think he needs to buy a boat',
-    face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
-  }, {
-    id: 4,
-    name: 'Perry Governor',
-    notes: 'Just the nicest guy',
-    face: 'https://pbs.twimg.com/profile_images/491995398135767040/ie2Z_V6e.jpeg'
-  }];
+        return {
+            authorize: function (username) {
+                var deferred = $q.defer();
+
+                $localStorage.set('username', username);
+
+                if (!username) {
+                    deferred.reject();
+                }
+
+                $http({
+                    method: 'GET',
+                    url: 'http://192.168.1.3:3000/token',
+                    headers: {
+                        'username': $localStorage.get('username')
+                    }
+                }).
+                    success(function (data, status, headers, config) {
+                        $localStorage.set('serverSpins', data['spins']);
+                        $localStorage.set('token', data['token']);
+                        deferred.resolve();
+                    }).
+                    error(function (data, status, headers, config) {
+                        deferred.reject();
+                    });
+
+                return deferred.promise;
+            }
+        }
+    })
 
 
-  return {
-    all: function() {
-      return friends;
-    },
-    get: function(friendId) {
-      // Simple index lookup
-      return friends[friendId];
-    }
-  }
-});
+    .service('spinService', function ($q, $http, $localStorage) {
+        return {
+            spin: function (spins) {
+                var deferred = $q.defer();
+                $http({
+                    method: 'POST',
+                    url: 'http://192.168.1.3:3000/spin',
+                    data: {spins:spins},
+                    headers: {
+                        'Content-Type':'application/json',
+                        'x-access-token': $localStorage.get('token')
+                    }
+                }).
+                    success(function (data, status, headers, config) {
+                        deferred.resolve();
+                    }).
+                    error(function (data, status, headers, config) {
+                        deferred.reject();
+                    });
+
+                return deferred.promise;
+            }
+        }
+    })
+;
