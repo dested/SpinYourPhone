@@ -4,6 +4,15 @@ var jwt = require('jwt-simple');
 var colors = require('colors');
 var cors = require('cors');
 var jwtAuth = require('./jwtauth');
+var pmongo = require('promised-mongo');
+
+var db = pmongo('localhost:27017/local', ['spins']);
+db.spins.find().toArray().then(function(docs){
+    console.log('here');
+    console.log(docs);
+});
+
+
 
 
 app = express();

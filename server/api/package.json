@@ -12,6 +12,7 @@
     "jsonwebtoken": "^3.2.2",
     "jwt-simple": "^0.2.0",
     "moment": "^2.9.0",
+    "promised-mongo": "^0.11.1",
     "url": "^0.10.2"
   },
   "devDependencies": {},
