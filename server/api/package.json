@@ -4,7 +4,6 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
-    "6to5": "^3.0.16",
     "body-parser": "^1.10.2",
     "colors": "^1.0.3",
     "cors": "^2.5.3",

@@ -1,6 +1,7 @@
 var moment = require('moment');
 var q = require('q');
 var jwtAuth = require('./jwtauth');
+var jwt = require('jwt-simple');
 
 
 var maria = require('./data/maria/maria.js');
@@ -16,7 +17,7 @@ q.all([maria.init(), mongo.init(), express.init()]).then(function () {
     express.app.get('/token', function (req, res) {
         console.log('auth'.white);
 
-        maria.getUser(req.headers.username).then(user  => {
+        maria.getUser(req.headers.username).then(function(user)  {
 
             var expires = moment().add(20, 'seconds').valueOf();
             if (!users[user.username]) {
@@ -27,7 +28,7 @@ q.all([maria.init(), mongo.init(), express.init()]).then(function () {
                     user: user,
                     exp: expires
                 },
-                app.get('jwtTokenSecret')
+                express.app.get('jwtTokenSecret')
             );
             res.json({
                 token: token,
@@ -37,8 +38,8 @@ q.all([maria.init(), mongo.init(), express.init()]).then(function () {
             });
 
 
-        }).catch(()=> {
-            console.log('bad'.red);
+        }).catch(function(e) {
+            console.log('bad'.red,e);
             // No username provided, or invalid POST request. For simplicity, just return a 401
             res.status(401).send('Authentication error');
         });

@@ -35,16 +35,27 @@ Manager.prototype.init = function () {
 
 Manager.prototype.getUser = function (name) {
     var defer = q.defer();
-debugger;
 
-    this.client.query('SELECT 1 + 1 AS solution',  (err, rows, fields) =>{
-        debugger;
-        if (err) throw err;
+    var items = [];
 
-        console.log('The solution is: ', rows[0].solution);
+    this.client.query('SELECT 1 + 1 AS solution')
 
-        defer.resolve({username: name})
-    });
+        .on('result', function (res) {
+            res.on('row', function (row) {
+                items.push(row);
+            })
+                .on('error', function (err) {
+                    defer.reject();
+                    console.log('Result error: ' + inspect(err));
+                })
+                .on('end', function (info) {
+                    console.log('Result finished successfully');
+                });
+        })
+        .on('end', function () {
+            console.log('Done with all results');
+            defer.resolve(items[0]);
+        });
 
 
     return defer.promise;
