@@ -1,2 +1,2 @@
-c:\code\SpinYourPhone\client\platforms\android\ant-build\AndroidManifest.xml : \
-c:\code\SpinYourPhone\client\platforms\android\AndroidManifest.xml \
+C:\code\SpinYourPhone\client\platforms\android\ant-build\AndroidManifest.xml : \
+C:\code\SpinYourPhone\client\platforms\android\AndroidManifest.xml \

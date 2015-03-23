@@ -26,6 +26,8 @@ angular.module('spinYourPhone.controllers', [])
     })
     .controller('BadgesCtrl', function ($scope, $ionicModal, $timeout) {
     })
+    .controller('StarCtrl', function ($scope, $ionicModal, $timeout) {
+    })
     .controller('AppCtrl', function ($scope, $ionicModal, $timeout) {
         $scope.model = {};
         $scope.callback = {};

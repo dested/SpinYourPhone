@@ -1,3 +1,5 @@
+
+
 var Client = require('mariasql');
 var q = require('q');
 
@@ -7,7 +9,6 @@ function Manager() {
 
 Manager.prototype.init = function () {
     var defer = q.defer();
-
 
     this.client = new Client();
     this.client.connect({

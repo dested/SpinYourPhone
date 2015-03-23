@@ -47,6 +47,16 @@ angular.module('spinYourPhone', ['ionic', 'spinYourPhone.controllers', 'spinYour
                 }
             })
 
+            .state('app.star', {
+                url: '/star',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/star.html',
+                        controller: 'StarCtrl'
+                    }
+                }
+            })
+
             .state('app.leaderboard', {
                 url: '/leaderboard',
                 views: {
@@ -59,6 +69,6 @@ angular.module('spinYourPhone', ['ionic', 'spinYourPhone.controllers', 'spinYour
             });
 
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/login');
+        $urlRouterProvider.otherwise('/app');
 
     });
